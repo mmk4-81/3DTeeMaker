@@ -1,9 +1,6 @@
 import React from "react";
-import { easing } from "maath";
 import { useSnapshot } from "valtio";
-import { useFrame } from "@react-three/fiber";
-import { Decal, useGLTF, useTexture } from "@react-three/drei";
-
+import { useGLTF, useTexture, Decal } from "@react-three/drei";
 import state from "../store/index";
 
 const Shirt = () => {
@@ -11,16 +8,19 @@ const Shirt = () => {
   const { nodes, materials } = useGLTF("/shirt_baked.glb");
 
   const logoTexture = useTexture(snap.logoDecal);
-  const fullTexture = useTexture(snap.fullDecal);
 
-  useFrame((state, delta) =>
-    easing.dampC(materials.lambert1.color, snap.color, 0.25, delta)
-  );
-
-  const stateString = JSON.stringify(snap);
+  if (materials.lambert1) {
+    materials.lambert1.color.set(snap.color); // تنظیم رنگ پیراهن
+    materials.lambert1.transparent = false;
+    materials.lambert1.opacity = 1;
+    materials.lambert1.map = null; // حذف تکسچرهای اضافی
+    materials.lambert1.normalMap = null;
+    materials.lambert1.aoMap = null;
+    materials.lambert1.needsUpdate = true;
+  }
 
   return (
-    <group key={stateString}>
+    <group>
       <mesh
         castShadow
         geometry={nodes.T_Shirt_male.geometry}
@@ -28,25 +28,18 @@ const Shirt = () => {
         material-roughness={1}
         dispose={null}
       >
-        {snap.isFullTexture && (
+        {/* اضافه کردن لوگو فقط اگر فعال باشد */}
+        {snap.isLogoTexture && (
           <Decal
-            position={[0, 0, 0]}
+            position={[0, 0.04, 0.15]} // محل قرارگیری لوگو روی سینه
             rotation={[0, 0, 0]}
-            scale={1}
-            map={fullTexture}
-          />
-        )}
-
-         {snap.isLogoTexture && (
-          <Decal
-            position={[0, 0.04, 0.15]}
-            rotation={[0, 0, 0]}
-            scale={0.15}
+            scale={0.15} // اندازه لوگو
             map={logoTexture}
-            mapAnisotropy={16}            depthTest={false}
+            mapAnisotropy={16}
+            depthTest={false}
             depthWrite={true}
           />
-        )}  
+        )}
       </mesh>
     </group>
   );
