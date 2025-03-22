@@ -1,59 +1,59 @@
 # 3D Tee Maker
 
-**3D Tee Maker** یک اپلیکیشن وب مبتنی بر React است که به کاربران این امکان را می‌دهد تا یک تیشرت سه‌بعدی را با افزودن رنگ‌ها، تکسچرها و لوگوهای مختلف سفارشی کنند. علاوه بر این، اپلیکیشن با استفاده از هوش مصنوعی (از طریق DALL-E) به کاربران این امکان را می‌دهد که لوگوها و تکسچرهای جدید بر اساس درخواست‌هایی که می‌دهند، ایجاد کنند. این اپلیکیشن همچنین از بک‌اند برای مدیریت دارایی‌هایی مانند تصاویر و تکسچرها با استفاده از Cloudinary و MongoDB برای ذخیره‌سازی داده‌های کاربران پشتیبانی می‌کند.
+**3D Tee Maker** is a React-based web application that allows users to customize a 3D t-shirt by adding colors, textures, and logos. Additionally, the app integrates with AI (via DALL-E) to generate logos and textures based on prompts provided by the user. The app also has backend functionality to manage assets like images and textures using Cloudinary and MongoDB for storing user data.
 
-## ویژگی‌ها
+## Features
 
-- **سفارشی‌سازی تیشرت سه‌بعدی تعاملی:**
-  - رنگ، تکسچر و لوگوی تیشرت سه‌بعدی را به‌صورت آنی سفارشی کنید.
-  - امکان آپلود تکسچرها یا لوگوهای سفارشی برای شخصی‌سازی طراحی شما.
+- **Interactive 3D Tee Customization:**
+  - Customize the color, texture, and logo of the 3D t-shirt in real-time.
+  - Upload custom textures or logos to personalize your design.
 
-  ![صفحه اصلی](assets/homepage.png)
+  ![Homepage](assets/homepage.png)
 
-- **تولید لوگو و تکسچر با استفاده از هوش مصنوعی:**
-  - از هوش مصنوعی DALL-E برای تولید لوگوها و تکسچرهای منحصر به فرد برای تیشرت استفاده کنید.
-  - یکپارچگی بدون درز با API OpenAI برای تولید خودکار دارایی‌ها.
-  
-  ![تغییر رنگ](assets/color-change.png)
+- **AI-Powered Logo and Texture Generation:**
+  - Use DALL-E AI to generate unique logos and textures for the t-shirt.
+  - Seamless integration with OpenAI’s API for automatic asset generation.
 
-- **پشتیبانی از بک‌اند:**
-  - **یکپارچگی با Cloudinary:** مدیریت و ذخیره‌سازی دارایی‌های تولید شده (تصاویر، تکسچرها) در فضای ابری.
-  - **ذخیره‌سازی داده‌ها با MongoDB:** ذخیره و بازیابی سفارشی‌سازی‌ها و تاریخچه کاربران.
-  - **API Express با پشتیبانی از CORS و Dotenv:** بک‌اند با استفاده از Express ساخته شده، با پیکربندی CORS و استفاده از متغیرهای محیطی برای مدیریت پیکربندی.
+  ![Color Change](assets/color-change.png)
 
-## تکنولوژی‌ها
+- **Backend Support:**
+  - **Cloudinary Integration:** Manage and store generated assets (images, textures) in the cloud.
+  - **MongoDB for Data Storage:** Store and retrieve user customizations and history.
+  - **Express API with CORS and Dotenv:** Backend built with Express, configured for CORS, and using environment variables for configuration management.
 
-### فرانت‌اند:
-- **React:** برای ساخت رابط کاربری پویا برای سفارشی‌سازی تیشرت.
-- **@react-three/fiber:** برای رندر کردن مدل سه‌بعدی تیشرت.
-- **Framer Motion:** برای افزودن انیمیشن به فرآیند سفارشی‌سازی تیشرت.
-- **TailwindCSS:** برای طراحی و استایل‌دهی به اپلیکیشن با استفاده از CSS مبتنی بر ابزار.
-- **Vite:** برای بسته‌بندی سریع و بهینه‌سازی شده دارایی‌های فرانت‌اند.
+## Tech Stack
 
-### بک‌اند:
-- **Node.js و Express:** منطق سرور برای مدیریت درخواست‌ها، از جمله آپلود دارایی‌ها و تولید دارایی‌های هوش مصنوعی.
-- **MongoDB و Mongoose:** برای ذخیره‌سازی داده‌ها و تاریخچه کاربران.
-- **Cloudinary:** برای ذخیره‌سازی تصاویر و دیگر دارایی‌ها در فضای ابری.
-- **OpenAI API:** برای تولید لوگوها و تکسچرها با استفاده از هوش مصنوعی DALL-E.
+### Frontend:
+- **React:** To build the dynamic UI of the t-shirt customizer.
+- **@react-three/fiber:** To render the 3D model of the t-shirt.
+- **Framer Motion:** For adding animations to the t-shirt customization process.
+- **TailwindCSS:** For styling the app using utility-first CSS.
+- **Vite:** For fast and optimized bundling of the frontend assets.
 
-## نحوه استفاده
+### Backend:
+- **Node.js & Express:** Server-side logic to handle requests, including asset uploads and AI-powered asset generation.
+- **MongoDB & Mongoose:** To store user data and history.
+- **Cloudinary:** For storing images and other assets in the cloud.
+- **OpenAI API:** To generate logos and textures using DALL-E AI.
 
-1. **سفارشی‌سازی تیشرت خود:**
-   - رنگ‌ها، تکسچرها و لوگوها را برای تیشرت سه‌بعدی خود انتخاب کنید.
-   - می‌توانید تکسچرها یا لوگوهای خود را نیز آپلود کنید.
+## Usage
+
+1. **Customize Your Tee:**
+   - Choose colors, textures, and logos for your 3D t-shirt.
+   - You can also upload your own textures or logos.
    
-   ![تغییر لوگو](assets/logo-change.png)
+   ![Logo Change](assets/logo-change.png)
 
-2. **تولید دارایی‌های هوش مصنوعی:**
-   - یک درخواست برای هوش مصنوعی (DALL-E) برای تولید لوگوها و تکسچرها وارد کنید.
-   - دارایی‌های تولید شده به‌صورت آنی به تیشرت اعمال خواهند شد.
+2. **Generate AI Assets:**
+   - Input a prompt for the AI (DALL-E) to generate logos and textures.
+   - The generated assets will be applied to the t-shirt in real-time.
 
-   ![پرومپت AI](assets/ai-prompt.png)
+   ![AI Prompt](assets/ai-prompt.png)
 
-3. **ذخیره یا دانلود:**
-   - وقتی از طراحی خود راضی بودید، می‌توانید آن را ذخیره کرده یا تصویر تیشرت را دانلود کنید.
+3. **Save or Download:**
+   - Once you're happy with your design, you can save the customization or download the image of the t-shirt.
 
-## ویژگی‌های آینده
+## Future Enhancements
 
-- **حساب‌های کاربری:** به کاربران این امکان را بدهید که طراحی‌های خود را ذخیره کرده و در دستگاه‌های مختلف به آن‌ها دسترسی داشته باشند.
-- **اشتراک‌گذاری در شبکه‌های اجتماعی:** گزینه‌های اشتراک‌گذاری در شبکه‌های اجتماعی را برای کاربران فراهم کنید تا تیشرت‌های سفارشی‌شده خود را به اشتراک بگذارند.
+- **User Accounts:** Allow users to save their designs and access them across different devices.
+- **Social Media Sharing:** Integrate social media sharing options for users to showcase their customized tees.
