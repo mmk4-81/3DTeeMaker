@@ -20,6 +20,7 @@
   - **Cloudinary Integration:** Manage and store generated assets (images, textures) in the cloud.
   - **MongoDB for Data Storage:** Store and retrieve user customizations and history.
   - **Express API with CORS and Dotenv:** Backend built with Express, configured for CORS, and using environment variables for configuration management.
+  - 
 
 ## Tech Stack
 
